@@ -66,7 +66,7 @@ Parameters:
     Type: String
     Description: >-
       The S3 bucket created for your copy of Quick Start assets.
-    Default: aws-quickstart
+    Default: aws-ia-us-east-1
     AllowedPattern: ^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$
   
   QSS3BucketRegion:
@@ -77,7 +77,7 @@ Parameters:
   QSS3KeyPrefix:
     Type: String
     Description: The S3 key name prefix used for your copy of Quick Start assets.
-    Default: quickstart-quantiphi-lex-kendra-backend/
+    Default: cfn-ps-quantiphi-lex-kendra-backend/
     AllowedPattern: ^[0-9a-zA-Z-/]*$
   
   KendraS3BucketName:
@@ -129,7 +129,7 @@ Parameters:
     Type: String
  
 Conditions:
-  UsingDefaultBucket: !Equals [!Ref QSS3BucketName, 'aws-quickstart']
+  UsingDefaultBucket: !Equals [!Ref QSS3BucketName, 'aws-ia-us-east-1']
 
 Resources:
   LambdaFunctionIAMRole:

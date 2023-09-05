@@ -6,7 +6,7 @@ Parameters:
   QSS3KeyPrefix:
     Type: String
     Description: The S3 key name prefix used for your copy of Quick Start assets
-    Default: quickstart-quantiphi-lex-kendra-backend/
+    Default: cfn-ps-quantiphi-lex-kendra-backend/
     AllowedPattern: ^[0-9a-zA-Z-/]*$
   
   ArtifactsS3BucketName:
