@@ -1,5 +1,5 @@
 project:
-  name: quickstart-quantiphi-lex-kendra-backend
+  name: cfn-ps-quantiphi-lex-kendra-backend
   owner: quickstart@amazon.com
   package_lambda: false
   lambda_zip_path: ./functions/packages/
