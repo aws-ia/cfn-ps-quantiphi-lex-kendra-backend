@@ -1,33 +1,28 @@
 project:
-  name: cfn-sample-template
+  name: quickstart-quantiphi-lex-kendra-backend
   owner: quickstart@amazon.com
   package_lambda: false
+  lambda_zip_path: ./functions/packages/
   regions:
-  - ap-northeast-1
-  - ap-northeast-2
-  - ap-southeast-1
-  - ap-southeast-2
-  - eu-central-1
-  - eu-west-1
-  - sa-east-1
-  - us-east-1
-  - us-west-1
-  - us-west-2
-tests:
-  sample:
-    parameters:
-      Param1: 'Inputs to Stack'
-      # Examples: of other taskcat dynamic input parameters for more into see http://taskcat.io
-      #
-      #      AvailabilityZones: $[taskcat_genaz_3]
-      #      ByteValue: 1
-      #      PasswordA: $[taskcat_genpass_8A]
-      #      PasswordB: $[taskcat_genpass_32S]
-      #      RandomNumber: $[taskcat_random-numbers]
-      #      RandomString: $[taskcat_random-string]
-      #      StackName: TestStack
-      #      UUID: $[taskcat_genuuid]
-      #
-    regions:
+    - eu-west-1
+    - us-west-2
     - us-east-2
-    template: templates/another-workload.template.yaml
+  parameters:
+    QSS3BucketName: $[taskcat_autobucket]
+    QSS3BucketRegion: $[taskcat_current_region]
+    KendraS3BucketName: $[taskcat_getval_QSS3BucketName] #Put your bucket name with Kendra docs here. Make sure the bucket is in the same region where template is being launched
+    KendraFAQFileKey: COVID_FAQ.csv #Put you FAQ file key here. The file should be in the same bucket as Kendra documents Bucket
+    LexBotJSONKey: assets/lex-bot-template/covid_bot_Export.json
+    AssumingAccountID: 213747939285
+    ExternalID: 1234
+  template: ./templates/lex_bot_kendra_master.template.yaml
+tests:
+  quickstart-quantiphi-test-1:
+    regions: 
+    - eu-west-1
+  quickstart-quantiphi-test-2:
+    regions: 
+    - us-west-2
+  quickstart-quantiphi-test-3:
+    regions: 
+    - us-east-1
