@@ -177,7 +177,7 @@ Resources:
     - LexBotIAMPolicy
     Type: AWS::Lambda::Function
     Properties:
-      Runtime: python3.6          
+      Runtime: python3.9 
       Timeout: 600
       Role: !GetAtt LexBotIAMRole.Arn
       MemorySize: 256

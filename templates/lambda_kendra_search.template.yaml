@@ -125,7 +125,7 @@ Resources:
       Code:
         S3Bucket: !Ref ArtifactsS3BucketName
         S3Key: !Sub "${QSS3KeyPrefix}functions/packages/kendra_search_intent_handler_lambda/kendra_search_intent_handler_lambda.zip"
-      Runtime: python3.6
+      Runtime: python3.9
       Timeout: 300
 
   LambdaPermission:

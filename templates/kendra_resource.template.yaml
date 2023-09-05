@@ -137,7 +137,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Layers: [!Ref CrHelperLayer]
-      Runtime: python3.6          
+      Runtime: python3.9          
       Timeout: 900
       Role: !GetAtt KendraIndexIAMRole.Arn
       MemorySize: 256
