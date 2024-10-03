@@ -1,3 +1,7 @@
+## Deprecation Notice
+
+:x: This repository is subject to deprecation in Q4 2024. For more details, [please review this announcement](https://github.com/aws-ia/.announcements/issues/1). 
+
 ## Amazon Lex Chatbot with Amazon Kendra on AWS
 
 For architectural details, step-by-step instructions, and customization options, see the [deployment guide](https://fwd.aws/NV7ba).
